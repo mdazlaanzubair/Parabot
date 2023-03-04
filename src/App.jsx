@@ -1,15 +1,12 @@
-import Footer from "./pages/layout/Footer";
-import Header from "./pages/layout/Header";
+import { useTheme } from "./context/ThemeContext";
 import AppRoutes from "./pages/routing/AppRoutes";
 
 function App() {
+  const { theme } = useTheme();
+
   return (
-    <div className="App">
-      <Header />
-      <div className="container min-h-screen min-w-screen mx-auto bg-indigo-300">
+    <div className="App" data-theme={theme}>
         <AppRoutes />
-      </div>
-      <Footer />
     </div>
   );
 }
